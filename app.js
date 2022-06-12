@@ -17,11 +17,11 @@ app.use(express.json());
 
 // route
 app.get('/', (req, res) => {
-    res.send('<h1> API STORE </h1><a href="/api/v1/products/"> products API </a>')
+    res.send('<h1> API STORE </h1><a href="/api/v1/products"> products API </a>')
 })
 
 // products route
-app.use('/api/v1/products/', router)
+app.use('/api/v1/products', router)
 
 app.use(notfoundMiddleware);
 app.use(errorMiddleware);
