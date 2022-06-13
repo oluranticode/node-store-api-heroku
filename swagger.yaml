@@ -10,7 +10,7 @@ paths:
   /static:
     get:
       tags:
-      - Store
+      - Misc
       summary: Get all product - testing
       operationId: Getallproduct-testing
       parameters: []
@@ -22,7 +22,7 @@ paths:
   /:
     get:
       tags:
-      - Store
+      - Misc
       summary: Get all product
       operationId: Getallproduct
       parameters: []
@@ -33,7 +33,7 @@ paths:
       deprecated: false
     post:
       tags:
-      - Store
+      - Misc
       summary: Create Product
       operationId: CreateProduct
       parameters: []
@@ -80,5 +80,5 @@ components:
         featured: true
         company: paystack
 tags:
-- name: Store
+- name: Misc
   description: ''
