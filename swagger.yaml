@@ -1,0 +1,84 @@
+openapi: 3.0.0
+info:
+  title: heroku_store_api
+  contact: {}
+  version: '1.0'
+servers:
+- url: https://store-api-temzycode.herokuapp.com/api/v1/products
+  variables: {}
+paths:
+  /static:
+    get:
+      tags:
+      - Store
+      summary: Get all product - testing
+      operationId: Getallproduct-testing
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+  /:
+    get:
+      tags:
+      - Store
+      summary: Get all product
+      operationId: Getallproduct
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+    post:
+      tags:
+      - Store
+      summary: Create Product
+      operationId: CreateProduct
+      parameters: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateProductRequest'
+            example:
+              name: my name is Loveth
+              price: 28
+              featured: true
+              company: paystack
+        required: true
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+components:
+  schemas:
+    CreateProductRequest:
+      title: CreateProductRequest
+      required:
+      - name
+      - price
+      - featured
+      - company
+      type: object
+      properties:
+        name:
+          type: string
+        price:
+          type: integer
+          format: int32
+        featured:
+          type: boolean
+        company:
+          type: string
+      example:
+        name: my name is Loveth
+        price: 28
+        featured: true
+        company: paystack
+tags:
+- name: Store
+  description: ''
