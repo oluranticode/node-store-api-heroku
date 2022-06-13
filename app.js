@@ -9,10 +9,11 @@ const cors = require('cors');
 const xss = require('xss-clean');
 const rateLimiter = require('express-rate-limit');
 
-    // Swagger
+// Swagger
 const swaggerUI = require('swagger-ui-express');
-const YAML = require('yaml-js');
-const swaggerDocs = YAML.load('./swagger.yaml');
+const YAML = require('yamljs');
+const swaggerDocument = YAML.load('./swagger.yaml');
+
 
 const app = express();
 // import middlewares 
@@ -43,7 +44,7 @@ app.set('trust proxy', 1);
   app.use(cors());
   app.use(xss()); 
 
-app.use('/api-docs', swaggerUI.serve, swaggerUI.setup(swaggerDocs))
+app.use('/api-docs', swaggerUI.serve, swaggerUI.setup(swaggerDocument))
 
 // products route
 app.use('/api/v1/products', router)
