@@ -7,6 +7,5 @@
 
     router.route('/').get(getAllProducts).post(createProduct);
     router.route('/static').get(getAllProductsStatic);
-    router.route('/sort-all').get(getAllProductsSort);
-
+   
     module.exports = router
