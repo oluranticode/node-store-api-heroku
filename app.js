@@ -31,7 +31,6 @@ app.get('/', (req, res) => {
     res.send('<h1> API STORE </h1><a href="/api/v1/products"> products API </a><br> <a href="/api-docs"> SwaggerUI </a>')
 })
 
-app.use(express.json());
 app.set('trust proxy', 1);
   app.use(
     rateLimiter({
